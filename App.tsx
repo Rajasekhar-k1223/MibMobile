@@ -32,17 +32,26 @@ import {
   useNavigation,
 } from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {createDrawerNavigator} from '@react-navigation/drawer';
 import Login from './src/components/Login';
 import Userpage from './src/components/Userpage';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-
+import {DrawerNavigator} from './src/components/DrawerNavigator';
+import FriendsList from './src/components/FriendsList';
+import ChatView from './src/components/ChatView';
+const Stack = createNativeStackNavigator();
+const Drawer = createDrawerNavigator();
 const MenuIcon = (props: any) => {
   let navigation = useNavigation();
   var iconsColor = props.tintColor;
   console.log(iconsColor);
   return (
     <View
-      style={{flex:1,flexDirection: 'row', justifyContent: 'space-between',paddingLeft:"22%",paddingRight:"2%"}}>
+      style={{
+        flex: 1,
+        flexDirection: 'row',
+        justifyContent: 'flex-end',
+      }}>
       {/* <Ionicons
         name="menu"
         size={28}
@@ -53,8 +62,8 @@ const MenuIcon = (props: any) => {
           navigation.dispatch(DrawerActions.toggleDrawer());
         }}
       /> */}
-     
-      <Ionicons
+
+      {/* <Ionicons
         name="home"
         size={28}
         color={Colors.headerTextColor}
@@ -64,8 +73,8 @@ const MenuIcon = (props: any) => {
           navigation.navigate('Home');
           //  navigation.dispatch(DrawerActions.toggleDrawer());
         }}
-      />
-       <Ionicons
+      /> */}
+      {/* <Ionicons
         name="search"
         size={28}
         color={Colors.headerTextColor}
@@ -74,15 +83,15 @@ const MenuIcon = (props: any) => {
           console.log('ABC');
           //  navigation.dispatch(DrawerActions.toggleDrawer());
         }}
-      />
+      /> */}
       <Ionicons
         name="chatbubbles-sharp"
         size={28}
         color={Colors.headerTextColor}
-        style={{color: iconsColor}}
+        style={{color: iconsColor, marginRight: 15}}
         onPress={() => {
           console.log('ABC');
-          navigation.navigate('ChatList');
+          navigation.navigate('friendsList');
           //  navigation.dispatch(DrawerActions.toggleDrawer());
         }}
       />
@@ -90,19 +99,29 @@ const MenuIcon = (props: any) => {
         name="md-notifications-circle-outline"
         size={28}
         color={Colors.headerTextColor}
-        style={{color: iconsColor}}
+        style={{color: iconsColor, marginRight: 15}}
         onPress={() => {
           console.log('ABC');
           navigation.navigate('Settings');
         }}
       />
-      <Ionicons
+      {/* <Ionicons
         name="menu"
         size={28}
         color={Colors.headerTextColor}
         style={{color: iconsColor}}
         onPress={() => {
           console.log('ABC');
+          navigation.dispatch(DrawerActions.toggleDrawer());
+        }}
+      /> */}
+      <Ionicons
+        name="apps"
+        size={28}
+        color={Colors.headerTextColor}
+        style={{color: iconsColor}}
+        onPress={() => {
+          //console.log('ABC');
           navigation.dispatch(DrawerActions.toggleDrawer());
         }}
       />
@@ -123,11 +142,10 @@ const LogoTitle = (props: any) => {
   return (
     <View>
       {/* <Image source={require('./assets/logo.png')} /> */}
-      <Text style={{fontSize:20}}>MIB</Text>
+      <Text style={{fontSize: 20, color: '#fff'}}>MIBook</Text>
     </View>
   );
 };
-const Stack = createNativeStackNavigator();
 const Section: React.FC<
   PropsWithChildren<{
     title: string;
@@ -180,7 +198,7 @@ const App = () => {
         />
         <Stack.Screen
           name="userpage"
-          component={Userpage}
+          component={DrawerNavigator}
           options={({route}) => ({
             title: 'Feeds',
             //backgroundColor: 'red',
@@ -201,6 +219,37 @@ const App = () => {
               backgroundColor: '#3c2d52',
             },
           })}
+        />
+        <Stack.Screen
+          name="friendsList"
+          component={FriendsList}
+          //options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="chatview"
+          component={ChatView}
+          options={({route}) => ({
+            title: route.params.userName,
+            // backgroundColor: 'red',
+            //headerLeft: props => <LogoTitle {...props} />,
+            // headerLeft: props => <LogoTitle {...props} />,
+            headerLeft: props => null,
+            // headerRight: props => <UserIcons {...props} />,
+            //headerLeft: null,
+            headerTitleAlign: 'left',
+            headerTitleMarginLeft: 0,
+            headerTintColor: route.params.iconsColor,
+            headerTitleStyle: {
+              // marginLeft: 20,
+              // fontSize: responsiveFontSize(1.95),
+              color: '#fff',
+            },
+            gestureEnabled: false,
+            headerStyle: {
+              backgroundColor: route.params.backgroundColor,
+            },
+          })}
+          //options={{headerShown: false}}
         />
       </Stack.Navigator>
     </NavigationContainer>

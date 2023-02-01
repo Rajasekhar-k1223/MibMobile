@@ -23,7 +23,7 @@ import loginMailBlog from '../assets/imgs/blog.png';
 import {Dimensions} from 'react-native';
 import {useOrientation} from './useOrientation';
 import Feed from './Feed';
-import { config } from '../../config';
+import {config} from '../../config';
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 const axios = require('axios').default;
@@ -35,7 +35,7 @@ export default function Userpage() {
   useEffect(() => {
     StatusBar.setBackgroundColor('#3c2d52');
     StatusBar.setTranslucent(true);
-      const fetchdata = async () => {
+    const fetchdata = async () => {
       const userToken = await AsyncStorage.getItem('Token');
       const paramsData = {
         page: Page,
@@ -168,7 +168,7 @@ export default function Userpage() {
             (styles.container,
             {flexDirection: orientation === 'LANDSCAPE' ? 'row' : 'column'})
           }>
-          <FlatList
+          {/* <FlatList
             data={Feeds}
             renderItem={renderFeed}
             removeClippedSubviews={true} // Unmount components when outside of window
@@ -182,7 +182,211 @@ export default function Userpage() {
             //   loadMoreFeeds();
             // }}
             // keyExtractor={item => item.feedId}
-          />
+          /> */}
+          <View
+            style={
+              (styles.shadow,
+              {width: orientation === 'LANDSCAPE' ? '48.6%' : '97.2%'})
+            }>
+            <Image
+              source={loginPageEmail}
+              style={{
+                width: '100%',
+                height: 250,
+                borderTopRightRadius: 5,
+                borderTopLeftRadius: 5,
+              }}
+            />
+            <View
+              style={{
+                width: '100%',
+                flexDirection: 'row',
+                justifyContent: 'space-between',
+              }}>
+              <View
+                style={{flexDirection: 'row', marginTop: 10, paddingLeft: 5}}>
+                <Image
+                  source={loginPageEmail}
+                  style={{width: 25, height: 25, borderRadius: 15}}
+                />
+                <Text style={{marginLeft: 5, lineHeight: 25}}>Rajaskehar</Text>
+              </View>
+              <Icon
+                name="dots-three-vertical"
+                size={20}
+                style={{marginRight: 10, marginTop: 10}}
+              />
+            </View>
+            <Text style={{padding: 10}}>hello</Text>
+            <View
+              style={{
+                flexDirection: 'row',
+                justifyContent: 'space-between',
+                padding: 15,
+              }}>
+              <AntDesign
+                name="heart"
+                size={20}
+                style={{marginRight: 10, marginTop: 10}}
+              />
+              <Icon
+                name="emoji-happy"
+                size={20}
+                style={{marginRight: 10, marginTop: 10}}
+              />
+              <FontAwesome
+                name="comments"
+                size={20}
+                style={{marginRight: 10, marginTop: 10}}
+              />
+              <Icon
+                name="info-with-circle"
+                size={20}
+                style={{marginRight: 10, marginTop: 10}}
+              />
+              <MaterialCommunityIcons
+                name="share"
+                size={20}
+                style={{marginRight: 10, marginTop: 10}}
+              />
+            </View>
+          </View>
+          <View
+            style={
+              (styles.shadow,
+              {width: orientation === 'LANDSCAPE' ? '48.6%' : '97.2%'})
+            }>
+            <Image
+              source={loginPageEmail}
+              style={{
+                width: '100%',
+                height: 250,
+                borderTopRightRadius: 5,
+                borderTopLeftRadius: 5,
+              }}
+            />
+            <View
+              style={{
+                width: '100%',
+                flexDirection: 'row',
+                justifyContent: 'space-between',
+              }}>
+              <View
+                style={{flexDirection: 'row', marginTop: 10, paddingLeft: 5}}>
+                <Image
+                  source={loginPageEmail}
+                  style={{width: 25, height: 25, borderRadius: 15}}
+                />
+                <Text style={{marginLeft: 5, lineHeight: 25}}>Rajaskehar</Text>
+              </View>
+              <Icon
+                name="dots-three-vertical"
+                size={20}
+                style={{marginRight: 10, marginTop: 10}}
+              />
+            </View>
+            <Text style={{padding: 10}}>hello</Text>
+            <View
+              style={{
+                flexDirection: 'row',
+                justifyContent: 'space-between',
+                padding: 15,
+              }}>
+              <AntDesign
+                name="heart"
+                size={20}
+                style={{marginRight: 10, marginTop: 10}}
+              />
+              <Icon
+                name="emoji-happy"
+                size={20}
+                style={{marginRight: 10, marginTop: 10}}
+              />
+              <FontAwesome
+                name="comments"
+                size={20}
+                style={{marginRight: 10, marginTop: 10}}
+              />
+              <Icon
+                name="info-with-circle"
+                size={20}
+                style={{marginRight: 10, marginTop: 10}}
+              />
+              <MaterialCommunityIcons
+                name="share"
+                size={20}
+                style={{marginRight: 10, marginTop: 10}}
+              />
+            </View>
+          </View>
+          <View
+            style={
+              (styles.shadow,
+              {width: orientation === 'LANDSCAPE' ? '48.6%' : '97.2%'})
+            }>
+            <Image
+              source={loginPageEmail}
+              style={{
+                width: '100%',
+                height: 250,
+                borderTopRightRadius: 5,
+                borderTopLeftRadius: 5,
+              }}
+            />
+            <View
+              style={{
+                width: '100%',
+                flexDirection: 'row',
+                justifyContent: 'space-between',
+              }}>
+              <View
+                style={{flexDirection: 'row', marginTop: 10, paddingLeft: 5}}>
+                <Image
+                  source={loginPageEmail}
+                  style={{width: 25, height: 25, borderRadius: 15}}
+                />
+                <Text style={{marginLeft: 5, lineHeight: 25}}>Rajaskehar</Text>
+              </View>
+              <Icon
+                name="dots-three-vertical"
+                size={20}
+                style={{marginRight: 10, marginTop: 10}}
+              />
+            </View>
+            <Text style={{padding: 10}}>hello</Text>
+            <View
+              style={{
+                flexDirection: 'row',
+                justifyContent: 'space-between',
+                padding: 15,
+              }}>
+              <AntDesign
+                name="heart"
+                size={20}
+                style={{marginRight: 10, marginTop: 10}}
+              />
+              <Icon
+                name="emoji-happy"
+                size={20}
+                style={{marginRight: 10, marginTop: 10}}
+              />
+              <FontAwesome
+                name="comments"
+                size={20}
+                style={{marginRight: 10, marginTop: 10}}
+              />
+              <Icon
+                name="info-with-circle"
+                size={20}
+                style={{marginRight: 10, marginTop: 10}}
+              />
+              <MaterialCommunityIcons
+                name="share"
+                size={20}
+                style={{marginRight: 10, marginTop: 10}}
+              />
+            </View>
+          </View>
         </View>
       </ScrollView>
       <View

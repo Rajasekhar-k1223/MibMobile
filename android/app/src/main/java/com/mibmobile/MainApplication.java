@@ -13,6 +13,8 @@ import com.mibmobile.newarchitecture.MainApplicationReactNativeHost;
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 import com.oblador.vectoricons.VectorIconsPackage;
+import com.facebook.react.bridge.JSIModulePackage; // << add
+import com.swmansion.reanimated.ReanimatedJSIModulePackage; // << add
 public class MainApplication extends Application implements ReactApplication {
 
   private final ReactNativeHost mReactNativeHost =
@@ -35,6 +37,11 @@ public class MainApplication extends Application implements ReactApplication {
         protected String getJSMainModuleName() {
           return "index";
         }
+        @Override //<<add this function
+              protected JSIModulePackage getJSIModulePackage() {
+                return new ReanimatedJSIModulePackage(); 
+              }
+
       };
 
   private final ReactNativeHost mNewArchitectureNativeHost =
