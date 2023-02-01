@@ -35,6 +35,7 @@ function Login() {
     StatusBar.setTranslucent(true);
   }, []);
   const CheckUser = () => {
+    console.log("login")
     navigation.navigate('userpage');
   };
   return (
