@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "410623626923",
+    "project_id": "mibook-29e40",
+    "storage_bucket": "mibook-29e40.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:410623626923:android:4c16d9c5eaaaff577231ee",
+        "android_client_info": {
+          "package_name": "com.mibmobile"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "410623626923-2sqs971u5pgd2bih5kq17c0o2mfsjavo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mibmobile",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "410623626923-eevqv0a31isaoujgcv6ipeq4okauvsue.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_NXcpUwZ97xZALCt_HNn-KzKKiJqlrFQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "410623626923-eevqv0a31isaoujgcv6ipeq4okauvsue.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
