@@ -66,7 +66,8 @@ export default function FriendsList() {
                 backgroundColor: 'red',
                 borderRadius: 10,
                 marginLeft: 40,
-              }}></Text>
+              }}
+            />
             <Text>07:29pm</Text>
           </View>
         </TouchableOpacity>
@@ -121,7 +122,8 @@ export default function FriendsList() {
                 backgroundColor: 'red',
                 borderRadius: 10,
                 marginLeft: 40,
-              }}></Text>
+              }}
+            />
             <Text>07:29pm</Text>
           </View>
         </TouchableOpacity>
@@ -176,7 +178,8 @@ export default function FriendsList() {
                 backgroundColor: 'red',
                 borderRadius: 10,
                 marginLeft: 40,
-              }}></Text>
+              }}
+            />
             <Text>07:29pm</Text>
           </View>
         </TouchableOpacity>
@@ -231,7 +234,8 @@ export default function FriendsList() {
                 backgroundColor: 'red',
                 borderRadius: 10,
                 marginLeft: 40,
-              }}></Text>
+              }}
+            />
             <Text>07:29pm</Text>
           </View>
         </TouchableOpacity>
@@ -286,7 +290,8 @@ export default function FriendsList() {
                 backgroundColor: 'red',
                 borderRadius: 10,
                 marginLeft: 40,
-              }}></Text>
+              }}
+            />
             <Text>07:29pm</Text>
           </View>
         </TouchableOpacity>
@@ -341,7 +346,8 @@ export default function FriendsList() {
                 backgroundColor: 'red',
                 borderRadius: 10,
                 marginLeft: 40,
-              }}></Text>
+              }}
+            />
             <Text>07:29pm</Text>
           </View>
         </TouchableOpacity>
@@ -396,7 +402,8 @@ export default function FriendsList() {
                 backgroundColor: 'red',
                 borderRadius: 10,
                 marginLeft: 40,
-              }}></Text>
+              }}
+            />
             <Text>07:29pm</Text>
           </View>
         </TouchableOpacity>
@@ -451,7 +458,8 @@ export default function FriendsList() {
                 backgroundColor: 'red',
                 borderRadius: 10,
                 marginLeft: 40,
-              }}></Text>
+              }}
+            />
             <Text>07:29pm</Text>
           </View>
         </TouchableOpacity>
@@ -506,7 +514,8 @@ export default function FriendsList() {
                 backgroundColor: 'red',
                 borderRadius: 10,
                 marginLeft: 40,
-              }}></Text>
+              }}
+            />
             <Text>07:29pm</Text>
           </View>
         </TouchableOpacity>
@@ -561,7 +570,8 @@ export default function FriendsList() {
                 backgroundColor: 'red',
                 borderRadius: 10,
                 marginLeft: 40,
-              }}></Text>
+              }}
+            />
             <Text>07:29pm</Text>
           </View>
         </TouchableOpacity>
@@ -616,7 +626,8 @@ export default function FriendsList() {
                 backgroundColor: 'red',
                 borderRadius: 10,
                 marginLeft: 40,
-              }}></Text>
+              }}
+            />
             <Text>07:29pm</Text>
           </View>
         </TouchableOpacity>
@@ -671,7 +682,8 @@ export default function FriendsList() {
                 backgroundColor: 'red',
                 borderRadius: 10,
                 marginLeft: 40,
-              }}></Text>
+              }}
+            />
             <Text>07:29pm</Text>
           </View>
         </TouchableOpacity>
@@ -726,7 +738,8 @@ export default function FriendsList() {
                 backgroundColor: 'red',
                 borderRadius: 10,
                 marginLeft: 40,
-              }}></Text>
+              }}
+            />
             <Text>07:29pm</Text>
           </View>
         </TouchableOpacity>
@@ -781,7 +794,8 @@ export default function FriendsList() {
                 backgroundColor: 'red',
                 borderRadius: 10,
                 marginLeft: 40,
-              }}></Text>
+              }}
+            />
             <Text>07:29pm</Text>
           </View>
         </TouchableOpacity>
@@ -836,7 +850,8 @@ export default function FriendsList() {
                 backgroundColor: 'red',
                 borderRadius: 10,
                 marginLeft: 40,
-              }}></Text>
+              }}
+            />
             <Text>07:29pm</Text>
           </View>
         </TouchableOpacity>
@@ -891,7 +906,8 @@ export default function FriendsList() {
                 backgroundColor: 'red',
                 borderRadius: 10,
                 marginLeft: 40,
-              }}></Text>
+              }}
+            />
             <Text>07:29pm</Text>
           </View>
         </TouchableOpacity>
@@ -946,7 +962,8 @@ export default function FriendsList() {
                 backgroundColor: 'red',
                 borderRadius: 10,
                 marginLeft: 40,
-              }}></Text>
+              }}
+            />
             <Text>07:29pm</Text>
           </View>
         </TouchableOpacity>
@@ -1001,7 +1018,8 @@ export default function FriendsList() {
                 backgroundColor: 'red',
                 borderRadius: 10,
                 marginLeft: 40,
-              }}></Text>
+              }}
+            />
             <Text>07:29pm</Text>
           </View>
         </TouchableOpacity>
@@ -1056,7 +1074,8 @@ export default function FriendsList() {
                 backgroundColor: 'red',
                 borderRadius: 10,
                 marginLeft: 40,
-              }}></Text>
+              }}
+            />
             <Text>07:29pm</Text>
           </View>
         </TouchableOpacity>
@@ -1111,7 +1130,8 @@ export default function FriendsList() {
                 backgroundColor: 'red',
                 borderRadius: 10,
                 marginLeft: 40,
-              }}></Text>
+              }}
+            />
             <Text>07:29pm</Text>
           </View>
         </TouchableOpacity>
@@ -1166,7 +1186,8 @@ export default function FriendsList() {
                 backgroundColor: 'red',
                 borderRadius: 10,
                 marginLeft: 40,
-              }}></Text>
+              }}
+            />
             <Text>07:29pm</Text>
           </View>
         </TouchableOpacity>
@@ -1221,7 +1242,8 @@ export default function FriendsList() {
                 backgroundColor: 'red',
                 borderRadius: 10,
                 marginLeft: 40,
-              }}></Text>
+              }}
+            />
             <Text>07:29pm</Text>
           </View>
         </TouchableOpacity>
@@ -1276,7 +1298,8 @@ export default function FriendsList() {
                 backgroundColor: 'red',
                 borderRadius: 10,
                 marginLeft: 40,
-              }}></Text>
+              }}
+            />
             <Text>07:29pm</Text>
           </View>
         </TouchableOpacity>
@@ -1331,7 +1354,8 @@ export default function FriendsList() {
                 backgroundColor: 'red',
                 borderRadius: 10,
                 marginLeft: 40,
-              }}></Text>
+              }}
+            />
             <Text>07:29pm</Text>
           </View>
         </TouchableOpacity>
@@ -1386,7 +1410,8 @@ export default function FriendsList() {
                 backgroundColor: 'red',
                 borderRadius: 10,
                 marginLeft: 40,
-              }}></Text>
+              }}
+            />
             <Text>07:29pm</Text>
           </View>
         </TouchableOpacity>

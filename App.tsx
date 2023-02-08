@@ -10,6 +10,7 @@
 
 import React, {type PropsWithChildren} from 'react';
 import {
+  Image,
   SafeAreaView,
   ScrollView,
   StatusBar,
@@ -36,9 +37,12 @@ import {createDrawerNavigator} from '@react-navigation/drawer';
 import Login from './src/components/Login';
 import Userpage from './src/components/Userpage';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import Entypo from 'react-native-vector-icons/Entypo';
 import {DrawerNavigator} from './src/components/DrawerNavigator';
 import FriendsList from './src/components/FriendsList';
 import ChatView from './src/components/ChatView';
+import ChatInput from './src/components/messages/ChatInput';
+
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
 const MenuIcon = (props: any) => {
@@ -146,6 +150,47 @@ const LogoTitle = (props: any) => {
     </View>
   );
 };
+const UserIcon = (props: any) => {
+  return (
+    <View style={{flexDirection: 'row'}}>
+      <Image
+        source={require('./src/assets/imgs/blog.png')}
+        style={{width: 45, height: 45, marginLeft: 25}}
+      />
+      {/* <Entypo
+        name="dots-three-vertical"
+        size={26}
+        onPress={() => {
+          alert('hello');
+        }}
+        style={{marginTop: 10, marginLeft: 10}}
+      /> */}
+      {/* <Text style={{fontSize: 20, color: '#fff'}}>MIBook</Text> */}
+    </View>
+  );
+};
+const UserMenuIcon = (props: any) => {
+  return (
+    <View style={{flexDirection: 'row'}}>
+      {/* <Image
+        source={require('./src/assets/imgs/blog.png')}
+        style={{width: 45, height: 45}}
+      /> */}
+      <Ionicons name="call" size={30} style={{marginRight: 25}} />
+      <Ionicons name="md-videocam" size={30} style={{marginRight: 0}} />
+      <Entypo
+        name="dots-three-vertical"
+        size={26}
+        onPress={() => {
+          alert('hello');
+        }}
+        style={{marginTop: 10, marginLeft: 10}}
+      />
+      {/* <Text style={{fontSize: 20, color: '#fff'}}>MIBook</Text> */}
+    </View>
+  );
+};
+
 const Section: React.FC<
   PropsWithChildren<{
     title: string;
@@ -234,19 +279,20 @@ const App = () => {
             //headerLeft: props => <LogoTitle {...props} />,
             // headerLeft: props => <LogoTitle {...props} />,
             headerLeft: props => null,
-            // headerRight: props => <UserIcons {...props} />,
-            //headerLeft: null,
+            headerRight: props => <UserMenuIcon {...props} />,
+            // headerLeft: props => <UserIcon {...props} />,
             headerTitleAlign: 'left',
             headerTitleMarginLeft: 0,
             headerTintColor: route.params.iconsColor,
             headerTitleStyle: {
               // marginLeft: 20,
               // fontSize: responsiveFontSize(1.95),
-              color: '#fff',
+              color: '#000',
             },
             gestureEnabled: false,
             headerStyle: {
-              backgroundColor: route.params.backgroundColor,
+              //backgroundColor: route.params.backgroundColor,
+              backgroundColor: 'yellow',
             },
           })}
           //options={{headerShown: false}}
