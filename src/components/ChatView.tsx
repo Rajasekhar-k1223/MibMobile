@@ -17,7 +17,7 @@ function ChatView({navigation, route}) {
   const {username, bio, picture, isBlocked, isMuted} = route.params;
   const [reply, setReply] = useState('');
   const [isLeft, setIsLeft] = useState();
-
+  alert(username);
   const swipeToReply = (message, isLeft) => {
     setReply(message.length > 50 ? message.slice(0, 50) + '...' : message);
     setIsLeft(isLeft);
@@ -29,12 +29,12 @@ function ChatView({navigation, route}) {
 
   return (
     <View style={{flex: 1}}>
-      {/* <ChatHeader
+      <ChatHeader
         onPress={() => {}}
         username={username}
         picture={picture}
         onlineStatus={'Online'}
-      /> */}
+      />
       <MessagesList onSwipeToReply={swipeToReply} />
       <ChatInput
         reply={reply}

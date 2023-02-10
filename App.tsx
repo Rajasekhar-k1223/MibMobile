@@ -42,6 +42,8 @@ import {DrawerNavigator} from './src/components/DrawerNavigator';
 import FriendsList from './src/components/FriendsList';
 import ChatView from './src/components/ChatView';
 import ChatInput from './src/components/messages/ChatInput';
+import OnCallScreen from './src/screens/OnCallScreen';
+import CameraScreen from './src/screens/CameraScreen';
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -170,13 +172,22 @@ const UserIcon = (props: any) => {
   );
 };
 const UserMenuIcon = (props: any) => {
+  let navigation = useNavigation();
+
   return (
     <View style={{flexDirection: 'row'}}>
       {/* <Image
         source={require('./src/assets/imgs/blog.png')}
         style={{width: 45, height: 45}}
       /> */}
-      <Ionicons name="call" size={30} style={{marginRight: 25}} />
+      <Ionicons
+        onPress={() => {
+          navigation.navigate('onCallScreen', {username: 'Rajsekhar'});
+        }}
+        name="call"
+        size={30}
+        style={{marginRight: 25}}
+      />
       <Ionicons name="md-videocam" size={30} style={{marginRight: 0}} />
       <Entypo
         name="dots-three-vertical"
@@ -273,30 +284,33 @@ const App = () => {
         <Stack.Screen
           name="chatview"
           component={ChatView}
-          options={({route}) => ({
-            title: route.params.userName,
-            // backgroundColor: 'red',
-            //headerLeft: props => <LogoTitle {...props} />,
-            // headerLeft: props => <LogoTitle {...props} />,
-            headerLeft: props => null,
-            headerRight: props => <UserMenuIcon {...props} />,
-            // headerLeft: props => <UserIcon {...props} />,
-            headerTitleAlign: 'left',
-            headerTitleMarginLeft: 0,
-            headerTintColor: route.params.iconsColor,
-            headerTitleStyle: {
-              // marginLeft: 20,
-              // fontSize: responsiveFontSize(1.95),
-              color: '#000',
-            },
-            gestureEnabled: false,
-            headerStyle: {
-              //backgroundColor: route.params.backgroundColor,
-              backgroundColor: 'yellow',
-            },
-          })}
+          options={{headerShown: false}}
+          // options={({route}) => ({
+          //   title: route.params.userName,
+          //   // backgroundColor: 'red',
+          //   //headerLeft: props => <LogoTitle {...props} />,
+          //   // headerLeft: props => <LogoTitle {...props} />,
+          //   headerLeft: props => null,
+          //   headerRight: props => <UserMenuIcon {...props} />,
+          //   // headerLeft: props => <UserIcon {...props} />,
+          //   headerTitleAlign: 'left',
+          //   headerTitleMarginLeft: 0,
+          //   headerTintColor: route.params.iconsColor,
+          //   headerTitleStyle: {
+          //     // marginLeft: 20,
+          //     // fontSize: responsiveFontSize(1.95),
+          //     color: '#000',
+          //   },
+          //   gestureEnabled: false,
+          //   headerStyle: {
+          //     //backgroundColor: route.params.backgroundColor,
+          //     backgroundColor: 'yellow',
+          //   },
+          // })}
           //options={{headerShown: false}}
         />
+        <Stack.Screen name="OnCallScreen" component={OnCallScreen} />
+        <Stack.Screen name="Camera" component={CameraScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

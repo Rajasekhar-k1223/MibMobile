@@ -11,7 +11,7 @@ export default function FriendsList() {
         <TouchableOpacity
           onPress={() => {
             navigation.navigate('chatview', {
-              userName: 'Raja',
+              username: 'Raja',
               backgroundColor: 'red',
               iconsColor: 'black',
             });

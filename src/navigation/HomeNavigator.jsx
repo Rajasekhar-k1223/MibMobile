@@ -1,29 +1,25 @@
-import React, { useState, useEffect } from "react";
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  Animated,
-  Dimensions,
-} from "react-native";
-import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
-import Icon from "@expo/vector-icons/MaterialCommunityIcons";
+import React, {useState, useEffect} from 'react';
+import {View, Text, TouchableOpacity, Animated, Dimensions} from 'react-native';
+import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
+import Icon from '@expo/vector-icons/MaterialCommunityIcons';
 
-import CameraScreen from "../screens/CameraScreen";
-import StoriesScreen from "../screens/StoriesScreen";
-import ConversationsScreen from "../screens/ConversationsScreen";
-import CallsScreen from "../screens/CallsScreen";
+import CameraScreen from '../screens/CameraScreen';
+import StoriesScreen from '../screens/StoriesScreen';
+import ConversationsScreen from '../screens/ConversationsScreen';
+import CallsScreen from '../screens/CallsScreen';
 
-import { theme } from "../theme";
-const { width } = Dimensions.get("screen");
+import {theme} from '../theme';
+const {width} = Dimensions.get('screen');
 
 const CAMERA_TAB_ITEM_WIDTH = width * 0.1;
 const NORMAL_TAB_ITEM_WIDTH = width * 0.3;
 
 const Tab = createMaterialTopTabNavigator();
 
-const TabBarIndicator = ({ state }) => {
-  const [translateValue, setTranslateValue] = useState(new Animated.Value(CAMERA_TAB_ITEM_WIDTH));
+const TabBarIndicator = ({state}) => {
+  const [translateValue, setTranslateValue] = useState(
+    new Animated.Value(CAMERA_TAB_ITEM_WIDTH),
+  );
 
   const [itemWidth, setItemWidth] = useState(NORMAL_TAB_ITEM_WIDTH);
 
@@ -32,16 +28,21 @@ const TabBarIndicator = ({ state }) => {
   }, [state]);
 
   const slide = () => {
-    setItemWidth(state.routes[state.index].name === "Camera" ? CAMERA_TAB_ITEM_WIDTH : NORMAL_TAB_ITEM_WIDTH);
-    const toValue = state.routes[state.index].name === "Camera"
-    ? 0
-    : CAMERA_TAB_ITEM_WIDTH + ((state.index - 1) * NORMAL_TAB_ITEM_WIDTH);
+    setItemWidth(
+      state.routes[state.index].name === 'Camera'
+        ? CAMERA_TAB_ITEM_WIDTH
+        : NORMAL_TAB_ITEM_WIDTH,
+    );
+    const toValue =
+      state.routes[state.index].name === 'Camera'
+        ? 0
+        : CAMERA_TAB_ITEM_WIDTH + (state.index - 1) * NORMAL_TAB_ITEM_WIDTH;
     Animated.timing(translateValue, {
       toValue: toValue,
       duration: 300,
-      useNativeDriver: true
+      useNativeDriver: true,
     }).start();
-  }
+  };
 
   return (
     <Animated.View
@@ -51,17 +52,17 @@ const TabBarIndicator = ({ state }) => {
         borderBottomColor: theme.colors.white,
         borderBottomWidth: 3,
         bottom: 0,
-        transform: [{ translateX: translateValue }]
+        transform: [{translateX: translateValue}],
       }}
     />
-  )
-}
+  );
+};
 
-const MyTabBar = ({ state, descriptors, navigation, position }) => {
+const MyTabBar = ({state, descriptors, navigation, position}) => {
   return (
-    <View style={{ flexDirection: "row" }}>
+    <View style={{flexDirection: 'row'}}>
       {state.routes.map((route, index) => {
-        const { options } = descriptors[route.key];
+        const {options} = descriptors[route.key];
         const label =
           options.tabBarLabel !== undefined
             ? options.tabBarLabel
@@ -71,26 +72,26 @@ const MyTabBar = ({ state, descriptors, navigation, position }) => {
 
         const isFocused = state.index === index;
         const tabBarItemWidth =
-          route.name === "Camera"
+          route.name === 'Camera'
             ? CAMERA_TAB_ITEM_WIDTH
             : NORMAL_TAB_ITEM_WIDTH;
 
         const onPress = () => {
           const event = navigation.emit({
-            type: "tabPress",
+            type: 'tabPress',
             target: route.key,
             canPreventDefault: true,
           });
 
           if (!isFocused && !event.defaultPrevented) {
             // The `merge: true` option makes sure that the params inside the tab screen are preserved
-            navigation.navigate({ name: route.name, merge: true });
+            navigation.navigate({name: route.name, merge: true});
           }
         };
 
         const onLongPress = () => {
           navigation.emit({
-            type: "tabLongPress",
+            type: 'tabLongPress',
             target: route.key,
           });
         };
@@ -99,27 +100,25 @@ const MyTabBar = ({ state, descriptors, navigation, position }) => {
           <TouchableOpacity
             key={route.name}
             accessibilityRole="button"
-            accessibilityState={isFocused ? { selected: true } : {}}
+            accessibilityState={isFocused ? {selected: true} : {}}
             accessibilityLabel={options.tabBarAccessibilityLabel}
             testID={options.tabBarTestID}
             onPress={onPress}
             onLongPress={onLongPress}
             style={{
               width: tabBarItemWidth,
-              alignItems: "center",
-              justifyContent: "center",
+              alignItems: 'center',
+              justifyContent: 'center',
               paddingBottom: 5,
               height: 40,
-            }}
-          >
-            {route.name === "Camera" ? (
+            }}>
+            {route.name === 'Camera' ? (
               <Animated.View>
                 <Icon name="camera" size={25} color={theme.colors.white} />
               </Animated.View>
             ) : (
               <Animated.Text
-                style={{ color: theme.colors.white, fontWeight: "bold" }}
-              >
+                style={{color: theme.colors.white, fontWeight: 'bold'}}>
                 {label}
               </Animated.Text>
             )}
@@ -135,17 +134,16 @@ const HomeNavigator = () => {
   return (
     <Tab.Navigator
       initialRouteName="Conversations"
-      tabBar={(props) => <MyTabBar {...props} />}
+      tabBar={props => <MyTabBar {...props} />}
       style={{
         backgroundColor: theme.colors.primary,
-      }}
-    >
+      }}>
       <Tab.Screen name="Camera" component={CameraScreen} />
       <Tab.Screen
         name="Conversations"
         component={ConversationsScreen}
         options={{
-          tabBarLabel: "Disc.",
+          tabBarLabel: 'Disc.',
         }}
       />
       <Tab.Screen name="Stories" component={StoriesScreen} />
