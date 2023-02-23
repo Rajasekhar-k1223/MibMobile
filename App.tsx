@@ -44,6 +44,7 @@ import ChatView from './src/components/ChatView';
 import ChatInput from './src/components/messages/ChatInput';
 import OnCallScreen from './src/screens/OnCallScreen';
 import CameraScreen from './src/screens/CameraScreen';
+import Video from './src/components/calls/Video';
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -309,8 +310,13 @@ const App = () => {
           // })}
           //options={{headerShown: false}}
         />
-        <Stack.Screen name="OnCallScreen" component={OnCallScreen} />
-        <Stack.Screen name="Camera" component={CameraScreen} />
+        {/* <Stack.Screen name="OnCallScreen" component={OnCallScreen} /> */}
+        <Stack.Screen
+          name="Video"
+          component={Video}
+          options={{headerShown: false}}
+        />
+        {/* <Stack.Screen name="Camera" component={CameraScreen} /> */}
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -1,6 +1,6 @@
 import {useNavigation} from '@react-navigation/native';
 import React from 'react';
-import {Image, Text, TouchableOpacity, View} from 'react-native';
+import {Dimensions, Image, Text, TouchableOpacity, View} from 'react-native';
 import {ScrollView} from 'react-native-gesture-handler';
 import loginPageEmail from '../assets/imgs/64666.jpg';
 export default function FriendsList() {
@@ -12,6 +12,7 @@ export default function FriendsList() {
           onPress={() => {
             navigation.navigate('chatview', {
               username: 'Raja',
+              userId: 1,
               backgroundColor: 'red',
               iconsColor: 'black',
             });

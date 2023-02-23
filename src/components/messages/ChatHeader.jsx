@@ -2,6 +2,7 @@ import React from 'react';
 import {View, Text, StyleSheet, TouchableOpacity, Image} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import {theme} from '../../theme';
 
@@ -9,7 +10,11 @@ const ChatHeader = ({username, bio, picture, onlineStatus, onPress}) => {
   const navigation = useNavigation();
   return (
     <View style={styles.container}>
-      <TouchableOpacity style={ styles.backButton } onPress={ () => { navigation.goBack()} }>
+      <TouchableOpacity
+        style={styles.backButton}
+        onPress={() => {
+          navigation.goBack();
+        }}>
         <Icon name="angle-left" size={30} color={theme.colors.white} />
       </TouchableOpacity>
       <View style={styles.profileOptions}>
@@ -22,22 +27,23 @@ const ChatHeader = ({username, bio, picture, onlineStatus, onPress}) => {
         </TouchableOpacity>
         <View style={styles.options}>
           <TouchableOpacity
-            onPress={() =>
+            onPress={() => {
               navigation.navigate('OnCallScreen', {
                 username: username,
                 picture: picture,
-              })
-            }
+              });
+            }}
             style={{paddingHorizontal: 5}}>
             <Icon name="phone" size={30} color={theme.colors.white} />
           </TouchableOpacity>
           <TouchableOpacity
-            onPress={() =>
-              navigation.navigate('Camera', {
+            onPress={() => {
+              AsyncStorage.setItem('userId', 25);
+              navigation.navigate('Video', {
                 username: username,
                 picture: picture,
-              })
-            }
+              });
+            }}
             style={{paddingHorizontal: 5}}>
             <Icon name="video-camera" size={30} color={theme.colors.white} />
           </TouchableOpacity>

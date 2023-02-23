@@ -27,6 +27,7 @@ import {
   useIsFocused,
 } from '@react-navigation/native';
 import {SafeAreaView} from 'react-native-safe-area-context';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 function Login() {
   const navigation = useNavigation();
@@ -35,7 +36,8 @@ function Login() {
     StatusBar.setTranslucent(true);
   }, []);
   const CheckUser = () => {
-    console.log("login")
+    console.log('login');
+    AsyncStorage.setItem('userId', '25');
     navigation.navigate('userpage');
   };
   return (
